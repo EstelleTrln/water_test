@@ -1,4 +1,4 @@
-var url = 'http://devworld.fr';
+var url = 'http://localhost/water_test';
 
 
 $(document).ready( function () {

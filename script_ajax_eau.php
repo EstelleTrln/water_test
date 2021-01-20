@@ -1,12 +1,14 @@
 <?php
-require_once($_SERVER["DOCUMENT_ROOT"] . "/config.php");
-require_once(SERVEUR_PATH. '/model/modelGeneral.php');
+
+$watersJson = file_get_contents("eau.json");
+$waters = json_decode($watersJson);
 
 function projetEau($getParams){
-    require_once(SERVEUR_PATH . "/class/connexion.php"); 
-    $connexion = new Connexion(NOM_BDD, LOGIN, PASS,SVG);
+    // require_once(SERVEUR_PATH . "/class/connexion.php"); 
+    // $connexion = new Connexion(NOM_BDD, LOGIN, PASS,SVG);
     switch($getParams['function']){
         case 'autocomplete':
+            
             $sql = "SELECT * from eau WHERE designation_commerciale LIKE '%" . nettoyer_data($getParams['term']) . "%' OR commune LIKE '%" . nettoyer_data($getParams['term']) . "%' OR code_dep LIKE '%" . nettoyer_data($getParams['term']) . "%'";
             $result = $connexion->select($sql);
             $eau = array();
