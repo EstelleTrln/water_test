@@ -14,11 +14,15 @@ $(document).ready( function () {
                     ajax: 'projet-eau',
                     function : 'autocomplete',
                     term: request.term,
-                },
+				},
                 success: function (data)
                 {
-                    response(data);
-                }
+					console.log(data);
+					response(data);
+				}, 
+				error: function (e){
+					console.log(e)
+				}
             });
         },
         minLength: 2,
@@ -26,7 +30,8 @@ $(document).ready( function () {
         select : function(event, ui){ // lors de la sélection d'une proposition
             var code = ui.item.desc;
             $('#code_eau').val(code)
-        }
+		}
+		
     });
 
     choixEau();

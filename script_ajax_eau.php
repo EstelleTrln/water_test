@@ -1,25 +1,27 @@
 <?php
 
-$watersJson = file_get_contents("eau.json");
-$waters = json_decode($watersJson);
-
 function projetEau($getParams){
-    // require_once(SERVEUR_PATH . "/class/connexion.php"); 
-    // $connexion = new Connexion(NOM_BDD, LOGIN, PASS,SVG);
+    $watersJson = file_get_contents("assets/eau.json");
+    $waters = json_decode($watersJson);
+
     switch($getParams['function']){
         case 'autocomplete':
-            
-            $sql = "SELECT * from eau WHERE designation_commerciale LIKE '%" . nettoyer_data($getParams['term']) . "%' OR commune LIKE '%" . nettoyer_data($getParams['term']) . "%' OR code_dep LIKE '%" . nettoyer_data($getParams['term']) . "%'";
-            $result = $connexion->select($sql);
             $eau = array();
-            foreach ($result as $e){
-                $d = array();
-                $d['desc'] = $e->id;
-                // $d['value'] = $dep->name_department;
-                $d['label'] = $e->designation_commerciale . " (" . $e->code_dep . ") ". $e->IRSN;
-                $eau[] = $d;
-            }
+            foreach($waters as $water){
+                if( 
+                    strcmp(strtolower($water['designation_commerciale']), strtolower($getParams['term'])) !== 0
+                    OR strcmp(strtolower($water['commune']), strtolower($getParams['term'])) !== 0 
+                    OR strcmp(strtolower($water['code_dep']), strtolower($getParams['term'])) !== 0 
+                ){
+                    $d = array();
+                    $d['desc'] = $water['id'];
+                    // $d['value'] = $water['name_departement'];
+                    $d['label'] = $water['designation_commerciale'] . " (" . $water['code_dep'] . ") ". $water['IRSN'];
+                    array_push($eau, $d);
+                }
+            };
             echo json_encode($eau);
+            // echo json_encode($waters);
         break;
         case 'select-eau':
             $sql = "SELECT * from eau WHERE id =" . $getParams['eau'];

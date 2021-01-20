@@ -1,20 +1,5 @@
 [
 {
-    "type": "header",
-    "version": "4.8.4",
-    "comment": "Export to JSON plugin for PHPMyAdmin"
-},
-{
-    "type": "database",
-    "name": "eau"
-},
-{
-    "type": "table",
-    "name": "eau",
-    "database": "eau",
-    "data": 
-[
-{
     "id": "1",
     "nature": "Source",
     "IRSN": "S67",
@@ -2086,5 +2071,3 @@
 }
 ]
 
-}
-]

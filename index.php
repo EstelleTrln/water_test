@@ -1,4 +1,6 @@
 <?php 
+    //LOCALHOST URL
+    define ("LOCAL_URL", "http://localhost/water_test");
 
     $getParams = isset($_GET) ? $_GET : null;
     $postParams = isset($_POST) ? $_POST : null;

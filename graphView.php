@@ -6,25 +6,25 @@
 		<title>Waters test</title>
 
 		<!-- css pur -->
-		<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/assets/jquery-ui-1.12.1/jquery-ui.min.css">
-		<link rel="stylesheet" type="text/css" href="/assets/css/Chart.min.css">
+		<link rel="stylesheet" href="<?php echo LOCAL_URL ; ?>/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<?php echo LOCAL_URL ; ?>/assets/jquery-ui-1.12.1/jquery-ui.min.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo LOCAL_URL ; ?>/assets/css/Chart.min.css">
 
 		<!-- js pur -->
-		<script type="text/javascript" src="/assets/js/jquery-3.5.1.min.js"></script>
-        <script type="text/javascript" src="/assets/jquery-ui-1.12.1/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="/assets/js/popper.min.js"></script>
-		<script type="text/javascript" src="/assets/js/Chart.bundle.min.js"></script>
+		<script type="text/javascript" src="<?php echo LOCAL_URL ; ?>/assets/js/jquery-3.5.1.min.js"></script>
+        <script type="text/javascript" src="<?php echo LOCAL_URL ; ?>/assets/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="<?php echo LOCAL_URL ; ?>/assets/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="<?php echo LOCAL_URL ; ?>/assets/js/popper.min.js"></script>
+		<script type="text/javascript" src="<?php echo LOCAL_URL ; ?>/assets/js/Chart.bundle.min.js"></script>
       
 		
 		<!-- css & js custom -->
-		<link rel="stylesheet" href="/assets/css/style.css">
-        <script type="text/javascript" src="/assets/js/eau.js"></script>
+		<link rel="stylesheet" href="<?php echo LOCAL_URL ; ?>/assets/css/style.css">
+        <script type="text/javascript" src="<?php echo LOCAL_URL ; ?>/assets/js/eau.js"></script>
     
 
 	</head>
-    <header>
+    <header class="mb-4">
     </header>
     <main>
         <div class="container mb-4">
